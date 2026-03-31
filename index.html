@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anatolie Negara – Carrelage · Plâtrerie · Maçonnerie</title>
+<meta name="description" content="Anatolie Negara – Artisan qualifié en carrelage, plâtrerie et maçonnerie. Travail soigné, devis gratuit, Île-de-France.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #b8935a;
+    --gold-light: #d4af7a;
+    --dark: #0e0d0b;
+    --dark2: #181612;
+    --dark3: #221f1a;
+    --cream: #f5f0e8;
+    --cream2: #ede6d6;
+    --text-muted: rgba(245,240,232,0.55);
+    --text-mid: rgba(245,240,232,0.8);
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--dark);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 3rem;
+    background: rgba(14,13,11,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(184,147,90,0.18);
+    transition: padding 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--gold-light);
+    text-decoration: none;
+  }
+
+  .nav-logo span { font-style: italic; color: var(--cream); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.8rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.25s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--dark) !important;
+    padding: 0.55rem 1.5rem;
+    font-weight: 600 !important;
+    letter-spacing: 0.12em !important;
+    transition: background 0.25s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--dark) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 6rem;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 80% at 70% 50%, rgba(184,147,90,0.09) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 50% at 10% 80%, rgba(184,147,90,0.06) 0%, transparent 60%),
+      linear-gradient(135deg, #0e0d0b 0%, #1a1710 55%, #0e0d0b 100%);
+  }
+
+  .hero-line {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 55%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(184,147,90,0.3) 30%, rgba(184,147,90,0.3) 70%, transparent);
+  }
+
+  .hero-photo-stack {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 48%;
+    overflow: hidden;
+  }
+
+  .hero-photo-stack img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.55;
+    filter: contrast(1.05) saturate(0.85);
+    transition: opacity 1s;
+  }
+
+  .hero-photo-stack::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--dark) 0%, rgba(14,13,11,0.3) 40%, transparent 70%),
+                linear-gradient(to bottom, rgba(14,13,11,0.5) 0%, transparent 20%, transparent 80%, rgba(14,13,11,0.6) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-eyebrow-line {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-eyebrow-text {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 6vw, 5.8rem);
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 430px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.8rem;
+  }
+
+  .badge {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.1rem;
+    border: 1px solid rgba(184,147,90,0.4);
+    color: var(--gold-light);
+    font-weight: 500;
+    background: rgba(184,147,90,0.07);
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 1rem 2.5rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    border: 1px solid rgba(245,240,232,0.25);
+    color: var(--cream);
+    padding: 1rem 2.5rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+
+  .hero-stats {
+    position: absolute;
+    bottom: 3.5rem;
+    right: 6rem;
+    z-index: 3;
+    display: flex;
+    gap: 3rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+    font-weight: 400;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 7rem 6rem;
+    background: var(--dark2);
+    position: relative;
+  }
+
+  .services::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 6rem; right: 6rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(184,147,90,0.4), transparent);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .section-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--cream);
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 380px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    background: var(--dark3);
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .service-card:hover {
+    background: #2a2520;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+    transform-origin: left;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(184,147,90,0.12);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s;
+  }
+
+  .service-card:hover .service-num {
+    color: rgba(184,147,90,0.25);
+  }
+
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+
+  .service-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .service-list li {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 400;
+  }
+
+  .service-list li::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ── GALLERY ── */
+  .gallery {
+    padding: 7rem 6rem;
+    background: var(--dark);
+    position: relative;
+  }
+
+  .gallery::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 6rem; right: 6rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(184,147,90,0.4), transparent);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 280px 280px;
+    gap: 4px;
+    margin-top: 4rem;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.8) contrast(1.05);
+    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.06);
+    filter: saturate(1.05) contrast(1.05);
+  }
+
+  .gallery-item::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.2rem 1.5rem;
+    background: linear-gradient(to top, rgba(14,13,11,0.9), transparent);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+
+  .gallery-item:hover::after { opacity: 1; }
+
+  .gi-1 { grid-column: 1 / 5; grid-row: 1; }
+  .gi-2 { grid-column: 5 / 9; grid-row: 1; }
+  .gi-3 { grid-column: 9 / 13; grid-row: 1; }
+  .gi-4 { grid-column: 1 / 4; grid-row: 2; }
+  .gi-5 { grid-column: 4 / 8; grid-row: 2; }
+  .gi-6 { grid-column: 8 / 12; grid-row: 2; }
+  .gi-7 { grid-column: 12 / 13; grid-row: 2; display: flex; align-items: center; justify-content: center; background: var(--dark3); border: 1px solid rgba(184,147,90,0.2); }
+
+  .gallery-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .gallery-more span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .gallery-more small {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── WHY US ── */
+  .why {
+    padding: 7rem 6rem;
+    background: var(--dark2);
+    position: relative;
+  }
+
+  .why::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 6rem; right: 6rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(184,147,90,0.4), transparent);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-top: 4rem;
+  }
+
+  .why-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .why-feature {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .why-feature-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(184,147,90,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(184,147,90,0.06);
+    font-size: 1.1rem;
+  }
+
+  .why-feature-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .why-feature-text {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .why-image-col {
+    position: relative;
+  }
+
+  .why-img-main {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    filter: saturate(0.8);
+    display: block;
+  }
+
+  .why-img-frame {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid rgba(184,147,90,0.3);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .why-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: var(--gold);
+    color: var(--dark);
+    width: 130px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .why-badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .why-badge-text {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-top: 0.3rem;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    padding: 7rem 6rem;
+    background: var(--dark);
+    position: relative;
+  }
+
+  .testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 6rem; right: 6rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(184,147,90,0.4), transparent);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 4rem;
+  }
+
+  .testimonial-card {
+    background: var(--dark3);
+    padding: 2.5rem;
+    position: relative;
+  }
+
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 0.8;
+    margin-bottom: 1.2rem;
+    font-style: italic;
+  }
+
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--cream2);
+    line-height: 1.65;
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+  }
+
+  .testimonial-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1.2rem;
+  }
+
+  .star { color: var(--gold); font-size: 0.85rem; }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .testimonial-avatar {
+    width: 42px;
+    height: 42px;
+    background: rgba(184,147,90,0.2);
+    border: 1px solid rgba(184,147,90,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    flex-shrink: 0;
+  }
+
+  .testimonial-name {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--cream);
+  }
+
+  .testimonial-loc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  /* ── PROCESS ── */
+  .process {
+    padding: 7rem 6rem;
+    background: var(--dark2);
+    position: relative;
+  }
+
+  .process::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 6rem; right: 6rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(184,147,90,0.4), transparent);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold) 0%, rgba(184,147,90,0.3) 100%);
+  }
+
+  .process-step {
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .process-step-circle {
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--gold);
+    background: var(--dark2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.8rem;
+    position: relative;
+    z-index: 1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  .process-step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+  }
+
+  .process-step-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding: 7rem 6rem;
+    background: var(--dark);
+    position: relative;
+  }
+
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 6rem; right: 6rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(184,147,90,0.4), transparent);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
+    margin-top: 4rem;
+    align-items: start;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .contact-item-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(184,147,90,0.3);
+    background: rgba(184,147,90,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  .contact-item-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+
+  .contact-item-value {
+    font-size: 1rem;
+    color: var(--cream);
+    font-weight: 400;
+  }
+
+  .contact-item-sub {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+  }
+
+  .contact-zone {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(184,147,90,0.2);
+    background: rgba(184,147,90,0.04);
+  }
+
+  .contact-zone-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+  }
+
+  .contact-zone-text {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(245,240,232,0.12);
+    color: var(--cream);
+    padding: 0.85rem 1rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: border-color 0.25s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    border-color: rgba(184,147,90,0.5);
+    background: rgba(184,147,90,0.04);
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: rgba(245,240,232,0.3);
+  }
+
+  .form-select option {
+    background: var(--dark);
+    color: var(--cream);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 130px;
+  }
+
+  .form-submit {
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 1.1rem 2.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark2);
+    border-top: 1px solid rgba(184,147,90,0.15);
+    padding: 3rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--gold-light);
+  }
+
+  .footer-logo span { font-style: italic; color: var(--cream2); }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+
+  /* ── FLOATING WHATSAPP ── */
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 998;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    transition: transform 0.3s;
+  }
+
+  .whatsapp-btn:hover { transform: scale(1.1); }
+
+  .whatsapp-btn svg { width: 28px; height: 28px; fill: white; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-name { animation-delay: 0.25s; }
+  .hero-tagline { animation-delay: 0.35s; }
+  .hero-desc { animation-delay: 0.45s; }
+  .hero-badges { animation-delay: 0.55s; }
+  .hero-btns { animation-delay: 0.65s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { gap: 1.5rem; }
+    .hero, .services, .gallery, .why, .testimonials, .process, .contact, footer {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+    .services-grid, .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .process-steps::before { display: none; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-image-col { display: none; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0.9rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 6rem 1.5rem 4rem; flex-direction: column; text-align: center; min-height: auto; }
+    .hero-photo-stack { display: none; }
+    .hero-line { display: none; }
+    .hero-eyebrow { justify-content: center; }
+    .hero-btns { justify-content: center; }
+    .hero-badges { justify-content: center; }
+    .hero-desc { margin: 0 auto 2.5rem; }
+    .hero-stats { position: static; margin-top: 3rem; justify-content: center; }
+    .services, .gallery, .why, .testimonials, .process, .contact { padding: 4rem 1.5rem; }
+    .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gi-1,.gi-2,.gi-3,.gi-4,.gi-5,.gi-6 { grid-column: auto; grid-row: auto; height: 220px; }
+    .gi-7 { display: none; }
+    .process-steps { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; padding: 2rem 1.5rem; text-align: center; }
+    footer .footer-links { justify-content: center; }
+    .services::before, .gallery::before, .why::before,
+    .testimonials::before, .process::before, .contact::before {
+      left: 1.5rem; right: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><em>Anatolie</em> Negara</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#realisations">Réalisations</a></li>
+    <li><a href="#pourquoi">Pourquoi nous</a></li>
+    
+    <li><a href="#contact" class="nav-cta">Devis gratuit</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+  <div class="hero-photo-stack">
+    <img src="WhatsApp_Image_2026-03-29_at_16_40_36__1_.jpeg" alt="Rénovation salle de bain marbre">
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">Artisan qualifié · Île-de-France</span>
+    </div>
+    <h1 class="hero-name">Anatolie<br><em>Negara</em></h1>
+    <p class="hero-tagline">L'artisanat au service de votre intérieur</p>
+    <p class="hero-desc">Spécialiste en carrelage, plâtrerie et maçonnerie depuis <strong style="color:var(--gold-light)">23 ans</strong>. Plus de <strong style="color:var(--gold-light)">1000 chantiers</strong> réalisés en Île-de-France. Travail soigné, délais respectés, satisfaction garantie.</p>
+    <div class="hero-badges">
+      <span class="badge">🪨 Carrelage</span>
+      <span class="badge">🔧 Plâtrerie</span>
+      <span class="badge">🏗 Maçonnerie</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Devis gratuit →</a>
+      <a href="#realisations" class="btn-outline">Voir les travaux</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">23+</div>
+      <div class="stat-label">Ans d'expérience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1000+</div>
+      <div class="stat-label">Chantiers réalisés</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Ce que je propose</p>
+      <h2 class="section-title">Mes <em>savoir-faire</em></h2>
+    </div>
+    <p class="section-desc">Chaque projet est traité avec la même exigence : des matériaux de qualité, une pose soignée et un résultat durable.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon">🪨</div>
+      <h3 class="service-name">Carrelage & Faïence</h3>
+      <p class="service-text">Pose de carrelage intérieur et extérieur, salle de bain, cuisine, terrasse. Travail précis sur tout type de support.</p>
+      <ul class="service-list">
+        <li>Pose au sol et aux murs</li>
+        <li>Carrelage grand format</li>
+        <li>Imitation marbre / béton</li>
+        <li>Douche italienne & receveur</li>
+        <li>Joints colorés & fugue</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon">🔧</div>
+      <h3 class="service-name">Plâtrerie & Cloisons</h3>
+      <p class="service-text">Pose de placoplatre, isolation thermique et phonique, doublage des murs, création de cloisons et plafonds.</p>
+      <ul class="service-list">
+        <li>Cloisons Placoplatre</li>
+        <li>Enduits et lissage</li>
+        <li>Isolation intérieure</li>
+        <li>Faux plafonds</li>
+        <li>Rebouchage & rénovation</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon">🏗</div>
+      <h3 class="service-name">Maçonnerie</h3>
+      <p class="service-text">Travaux de maçonnerie générale, pose de pavés, dallage extérieur, escaliers, murets et ouvertures.</p>
+      <ul class="service-list">
+        <li>Pavage & dallage extérieur</li>
+        <li>Escaliers & allées</li>
+        <li>Murets & fondations</li>
+        <li>Ouverture de murs porteurs</li>
+        <li>Rénovation façades</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="realisations">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Portfolio</p>
+      <h2 class="section-title">Mes <em>réalisations</em></h2>
+    </div>
+    <p class="section-desc">Des photos réelles de chantiers terminés — aucune mise en scène, que du travail concret.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item gi-1" data-label="Douche marbre — Carrelage grand format">
+      <img src="WhatsApp_Image_2026-03-29_at_16_40_36__1_.jpeg" alt="Carrelage marbre douche italienne">
+    </div>
+    <div class="gallery-item gi-2" data-label="Salle de bain complète — Pose & plomberie">
+      <img src="WhatsApp_Image_2026-03-29_at_16_40_36__2_.jpeg" alt="Salle de bain marbre sol et mur">
+    </div>
+    <div class="gallery-item gi-3" data-label="Pavage extérieur — Pierres naturelles">
+      <img src="WhatsApp_Image_2026-03-29_at_16_40_36.jpeg" alt="Pavage pierres naturelles extérieur">
+    </div>
+    <div class="gallery-item gi-4" data-label="Douche carrelage taupe — Plâtrerie incluse">
+      <img src="WhatsApp_Image_2026-03-29_at_16_40_37__1_.jpeg" alt="Douche carrelage gris">
+    </div>
+    <div class="gallery-item gi-5" data-label="Porte d'entrée rénovée — Menuiserie">
+      <img src="WhatsApp_Image_2026-03-29_at_16_40_37__2_.jpeg" alt="Porte entrée bois rénovée">
+    </div>
+    <div class="gallery-item gi-6" data-label="Accès garage & escalier extérieur">
+      <img src="WhatsApp_Image_2026-03-29_at_16_40_37.jpeg" alt="Allée extérieure maison">
+    </div>
+    <div class="gallery-item gi-7">
+      <a class="gallery-more" href="#contact">
+        <span>+</span>
+        <small>Demander<br>d'autres photos</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="pourquoi">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Pourquoi choisir Anatolie</p>
+      <h2 class="section-title">Un artisan <em>fiable</em>,<br>un travail <em>impeccable</em></h2>
+    </div>
+    <p class="section-desc">Pas de sous-traitants, pas de surprises. C'est moi qui interviens, du début à la fin de votre chantier.</p>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-features">
+      <div class="why-feature">
+        <div class="why-feature-icon">✓</div>
+        <div>
+          <h4 class="why-feature-title">Devis gratuit et sans engagement</h4>
+          <p class="why-feature-text">Je me déplace pour évaluer votre projet, sans frais. Devis détaillé sous 48h, transparent et honnête.</p>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="why-feature-icon">⏱</div>
+        <div>
+          <h4 class="why-feature-title">Délais respectés</h4>
+          <p class="why-feature-text">Votre planning est le mien. Je m'engage sur une date de début et de fin, et je tiens mes engagements.</p>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="why-feature-icon">🛡</div>
+        <div>
+          <h4 class="why-feature-title">Travail garanti & assuré</h4>
+          <p class="why-feature-text">Tous mes travaux sont assurés en responsabilité civile professionnelle. Votre tranquillité d'esprit avant tout.</p>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="why-feature-icon">💬</div>
+        <div>
+          <h4 class="why-feature-title">Disponible & réactif</h4>
+          <p class="why-feature-text">Joignable 6j/7, je réponds rapidement à vos questions et vous tiens informé de l'avancement du chantier.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-image-col">
+      <div class="why-img-frame"></div>
+      <img class="why-img-main" src="WhatsApp_Image_2026-03-29_at_16_40_37__3_.jpeg" alt="Salle de bain réalisée par Anatolie Negara">
+      <div class="why-badge">
+        <div class="why-badge-num">23+</div>
+        <div class="why-badge-text">Ans d'expertise</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Comment ça marche</p>
+      <h2 class="section-title">De la <em>demande</em> à la <em>finition</em></h2>
+    </div>
+    <p class="section-desc">Un processus simple, clair et sans surprise.</p>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="process-step-circle">1</div>
+      <h4 class="process-step-title">Contact & visite</h4>
+      <p class="process-step-text">Appelez ou envoyez un message. Je viens sur place évaluer votre projet gratuitement.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-step-circle">2</div>
+      <h4 class="process-step-title">Devis détaillé</h4>
+      <p class="process-step-text">Devis écrit sous 48h, avec matériaux, main-d'œuvre et délai. Transparent et sans mauvaises surprises.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-step-circle">3</div>
+      <h4 class="process-step-title">Réalisation</h4>
+      <p class="process-step-text">Je réalise les travaux moi-même, avec soin. Chantier propre, vous êtes informé à chaque étape.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-step-circle">4</div>
+      <h4 class="process-step-title">Livraison</h4>
+      <p class="process-step-text">Visite finale ensemble, réception des travaux et garantie sur la pose. Vous êtes satisfait ou on rectifie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-header">
+    <div>
+      <p class="section-eyebrow">Parlons de votre projet</p>
+      <h2 class="section-title">Demandez votre <em>devis gratuit</em></h2>
+    </div>
+    <p class="section-desc">Réponse garantie sous 24h. Déplacement gratuit dans un rayon de 60 km autour de Rambouillet.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div>
+            <div class="contact-item-label">Téléphone & WhatsApp</div>
+            <div class="contact-item-value">+33 6 56 82 65 87</div>
+            <div class="contact-item-sub">Disponible 6j/7 · 8h–19h</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">anatolienegara09@gmail.com</div>
+            <div class="contact-item-sub">Réponse sous 24h</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Zone d'intervention</div>
+            <div class="contact-item-value">Rambouillet &amp; environs</div>
+            <div class="contact-item-sub">Rayon 60 km autour de Rambouillet (78)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-zone">
+        <div class="contact-zone-title">Zone de déplacement gratuit</div>
+        <p class="contact-zone-text">Je me déplace gratuitement dans un rayon de 60 km autour de Rambouillet (78) : Versailles, Chartres, Paris, Étampes, Mantes-la-Jolie et toute la région. Au-delà, me contacter.</p>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Prénom & Nom</label>
+          <input class="form-input" type="text" placeholder="Jean Dupont" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Téléphone</label>
+          <input class="form-input" type="tel" placeholder="06 12 34 56 78" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="jean.dupont@mail.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Type de travaux</label>
+        <select class="form-select">
+          <option value="">— Choisir —</option>
+          <option>Carrelage / Faïence</option>
+          <option>Plâtrerie / Cloisons</option>
+          <option>Maçonnerie / Pavage</option>
+          <option>Salle de bain complète</option>
+          <option>Plusieurs prestations</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description du projet</label>
+        <textarea class="form-textarea" placeholder="Décrivez votre projet : surface approximative, type de pièce, délai souhaité..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Envoyer ma demande →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><em>Anatolie</em> Negara</div>
+  <p class="footer-copy">© 2026 Anatolie Negara · Artisan carreleur · SIRET : XXXX XXX XXX XXXXX · Assuré RC Pro</p>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#realisations">Réalisations</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<!-- WHATSAPP FLOATING -->
+<a class="whatsapp-btn" href="https://wa.me/33656826587?text=Bonjour%20Anatolie%2C%20je%20souhaite%20un%20devis%20pour..." target="_blank" title="Contactez-moi sur WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✓ Message envoyé !';
+    btn.style.background = '#4ade80';
+    btn.style.color = '#0a0a0a';
+    setTimeout(() => {
+      btn.textContent = 'Envoyer ma demande →';
+      btn.style.background = '';
+      btn.style.color = '';
+      e.target.reset();
+    }, 3000);
+  }
+
+  // Smooth scroll offset for fixed nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAtt
